@@ -4,7 +4,7 @@ import React from 'react'
 const botoes = () => {
     return (
         <div>
-            <Alerta></Alerta>
+            <Alerta />
         </div>
     )
 }

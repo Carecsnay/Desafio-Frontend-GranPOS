@@ -1,5 +1,4 @@
 import Box from "@/components/Box";
-import Pagina from "@/components/Pagina";
 
 export default function Home() {
   return (

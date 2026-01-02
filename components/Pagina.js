@@ -11,7 +11,7 @@ const Pagina = (props) => {
                         <Nav.Link href="/">Pagina Inicial</Nav.Link>
                         <Nav.Link href="/alertas">Alerta</Nav.Link>
                         <Nav.Link href="/botoes">Botões</Nav.Link>
-                        <Nav.Link href="/endereco">Endereço</Nav.Link>
+                        <Nav.Link href="/endereco">Formulário de Contato</Nav.Link>
                     </Nav>
                 </Container>
             </Navbar>

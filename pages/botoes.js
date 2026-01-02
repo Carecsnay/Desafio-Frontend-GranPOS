@@ -4,7 +4,7 @@ import React from 'react'
 const botoes = () => {
     return (
         <div>
-            <Botoes></Botoes>
+            <Botoes />
         </div>
     )
 }
