@@ -43,7 +43,7 @@ const Endereco = () => {
                 <Field label="CEP: " name="CEP" register={register} maxLength={9} placeholder="Digite seu CEP" onChange={buscarCEP} />
                 <Field label="Cidade: " name="cidade" register={register} placeholder="Digite sua Cidade" />
                 <Field label="Estado (UF): " name="UF" register={register} placeholder="Digite sua UF" />
-                <Field label="Endereço: " name="endereco" register={register} placeholder="Digite seu Endereço" />
+                <Field label="Endereço: " name="endereco" register={register} placeholder="Digite seu endereço" />
                 <Field label="Bairro: " name="bairro" register={register} placeholder="Digite seu bairro" />
                 <Field label="Número: " name="numero" type="number" register={register} placeholder="Digite o número do imóvel" />
                 <Field label="Complemento: " name="complemento" register={register} placeholder="Digite seu complemento (se houver)" />
