@@ -1,6 +1,6 @@
-# Desafio Frontend Cloud
+# Desafio Frontend Gran PÓS Faculdade - Desenvolvimento Full Stack e Cloud Computing
 
-Este projeto é uma aplicação web desenvolvida com **Next.js** e **React Bootstrap**, focada na criação de formulários inteligentes com consumo de API externa e feedback visual para o usuário.
+Este projeto é uma aplicação web desenvolvida com **React.js** e **React Bootstrap**, focada na criação de formulários inteligentes com consumo de API externa e feedback visual para o usuário.
 
 ## 🚀 Funcionalidades Implementadas
 
