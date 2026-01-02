@@ -8,9 +8,10 @@ const Pagina = (props) => {
                 <Container>
                     <Navbar.Brand href="/">Front-End</Navbar.Brand>
                     <Nav className="me-auto">
-                        <Nav.Link href="/">Inicial</Nav.Link>
+                        <Nav.Link href="/">Pagina Inicial</Nav.Link>
                         <Nav.Link href="/alertas">Alerta</Nav.Link>
                         <Nav.Link href="/botoes">Botões</Nav.Link>
+                        <Nav.Link href="/endereco">Endereço</Nav.Link>
                     </Nav>
                 </Container>
             </Navbar>
