@@ -1,10 +1,17 @@
-import { Form } from 'react-bootstrap'
+import { Form, InputGroup, Spinner } from 'react-bootstrap'
 
-const Field = ({ label, name, register, ...props }) => {
+const Field = ({ label, name, register, loading, ...props }) => {
     return (
         <Form.Group className="mb-3" controlId={name}>
             <Form.Label>{label}</Form.Label>
-            <Form.Control {...register(name)} {...props} />
+            <InputGroup>
+                <Form.Control {...register(name)} {...props} />
+                {loading && (
+                    <InputGroup.Text>
+                        <Spinner animation="border" size="sm" />
+                    </InputGroup.Text>
+                )}
+            </InputGroup>
         </Form.Group>
     )
 }

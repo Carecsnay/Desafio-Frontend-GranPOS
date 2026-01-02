@@ -10,6 +10,7 @@ const Endereco = () => {
     const [showToast, setShowToast] = useState(false)
     const [toastMessage, setToastMessage] = useState('')
     const [toastVariant, setToastVariant] = useState('success')
+    const [isLoading, setIsLoading] = useState(false)
 
     const buscarCEP = (event) => {
         let cep = event.target.value.replace(/\D/g, '')
@@ -21,6 +22,7 @@ const Endereco = () => {
         setValue('cep', cep)
 
         if (cep.replace('-', '').length == 8) {
+            setIsLoading(true)
             setToastMessage('Buscando dados do CEP...')
             setToastVariant('warning')
             setShowToast(true)
@@ -28,6 +30,7 @@ const Endereco = () => {
             setTimeout(() => {
                 axios.get(`https://viacep.com.br/ws/${cep.replace('-', '')}/json/`)
                     .then(resultado => {
+                        setIsLoading(false)
                         if (resultado.status === 200 && !resultado.data.erro) {
                             setValue('UF', resultado.data.uf)
                             setValue('cidade', resultado.data.localidade)
@@ -44,6 +47,7 @@ const Endereco = () => {
                             setShowToast(true)
                         }
                     }).catch(() => {
+                        setIsLoading(false)
                         setToastMessage('Por favor verifique o CEP informado e tente novamente')
                         setToastVariant('danger')
                         setShowToast(true)
@@ -53,8 +57,7 @@ const Endereco = () => {
 
     }
 
-    const submit = (dados) => {
-        console.log(dados)
+    const submit = () => {
         setToastMessage('Formulário enviado com sucesso!')
         setToastVariant('success')
         setShowToast(true)
@@ -65,12 +68,12 @@ const Endereco = () => {
         <>
             <h4 className='p-3 border rounded bg-secondary bg-opacity-75 text-white'>Endereço de Entrega</h4>
             <Form onSubmit={handleSubmit(submit)} className='text-white bg-secondary bg-opacity-75 p-3 border rounded'>
-                <Field label="CEP: " name="CEP" register={register} maxLength={9} placeholder="Digite seu CEP" onChange={buscarCEP} />
-                <Field label="Cidade: " name="cidade" register={register} placeholder="Digite sua Cidade" />
-                <Field label="Estado (UF): " name="UF" register={register} placeholder="Digite sua UF" />
-                <Field label="Endereço: " name="endereco" register={register} placeholder="Digite seu endereço" />
-                <Field label="Bairro: " name="bairro" register={register} placeholder="Digite seu bairro" />
-                <Field label="Número: " name="numero" type="number" register={register} placeholder="Digite o número do imóvel" />
+                <Field label="CEP: " name="CEP" register={register} maxLength={9} placeholder="Digite seu CEP" onChange={buscarCEP} disabled={isLoading} loading={isLoading} required />
+                <Field label="Cidade: " name="cidade" register={register} placeholder="Digite sua Cidade" required />
+                <Field label="Estado (UF): " name="UF" register={register} placeholder="Digite sua UF" required />
+                <Field label="Endereço: " name="endereco" register={register} placeholder="Digite seu endereço" required />
+                <Field label="Bairro: " name="bairro" register={register} placeholder="Digite seu bairro" required />
+                <Field label="Número: " name="numero" type="number" register={register} placeholder="Digite o número do imóvel" required />
                 <Field label="Complemento: " name="complemento" register={register} placeholder="Digite seu complemento (se houver)" />
 
                 <Button type='submit' variant='success' className='mt-2'>Enviar</Button>
