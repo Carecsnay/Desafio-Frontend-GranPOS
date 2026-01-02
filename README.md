@@ -1,6 +1,6 @@
 # Desafio Frontend Gran PÓS Faculdade - Desenvolvimento Full Stack e Cloud Computing
 
-Este projeto é uma aplicação web desenvolvida com **React.js (NextJS) ** e **React Bootstrap**, ensinando a dar os primeiros passos com a biblioteca REACTJS.
+Este projeto é uma aplicação web desenvolvida com **React.js (NextJS)** e **React Bootstrap**, ensinando a dar os primeiros passos com a biblioteca REACTJS.
 
 ## 🚀 Funcionalidades Implementadas
 
