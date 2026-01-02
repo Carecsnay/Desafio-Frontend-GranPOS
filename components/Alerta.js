@@ -16,7 +16,7 @@ const Alerta = () => {
                     'dark',
                 ].map((variant) => (
                     <Alert key={variant} variant={variant}>
-                        Esse é o alerta <span className='fw-bold'>{variant}</span> do Bootstrap!
+                        Esse é o alerta <span className='fw-bold'>{variant}</span> do Bootstrap ReactJS!
                     </Alert>
                 ))
             }
