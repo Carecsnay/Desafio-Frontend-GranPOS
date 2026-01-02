@@ -8,11 +8,16 @@ const endereco = () => {
     const { register, handleSubmit, setValue } = useForm()
 
     const buscarCEP = (event) => {
-        const cep = event.target.value
+        let cep = event.target.value.replace(/\D/g, '')
 
-        if (cep.length == 8) {
-            axios.get(`https://viacep.com.br/ws/${cep}/json/`).then(resultado => {
-                console.log(resultado.data)
+        if (cep.length > 5) {
+            cep = cep.replace(/^(\d{5})(\d)/, '$1-$2')
+        }
+
+        setValue('cep', cep)
+
+        if (cep.replace('-', '').length == 8) {
+            axios.get(`https://viacep.com.br/ws/${cep.replace('-', '')}/json/`).then(resultado => {
 
                 setValue('UF', resultado.data.uf)
                 setValue('cidade', resultado.data.localidade)
@@ -24,13 +29,18 @@ const endereco = () => {
 
     }
 
+    const submit = (dados) => {
+        console.log(dados)
+    }
+
+
     return (
         <>
             <h4 className='p-2 border rounded bg-secondary bg-opacity-75 text-white'>Endereço para Contato</h4>
-            <Form className='text-white bg-secondary bg-opacity-75 p-3 border rounded'>
+            <Form onSubmit={handleSubmit(submit)} className='text-white bg-secondary bg-opacity-75 p-3 border rounded'>
                 <Form.Group className="mb-3" controlId="CEP">
                     <Form.Label>CEP: </Form.Label>
-                    <Form.Control defaultValue={'6434000'} type="number" {...register('cep')} placeholder="Digite seu CEP" onChange={buscarCEP} />
+                    <Form.Control type="text" maxLength={9} {...register('cep')} placeholder="Digite seu CEP" onChange={buscarCEP} />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="cidade">
@@ -63,7 +73,7 @@ const endereco = () => {
                     <Form.Control type="text" {...register('complemento')} placeholder="Digite seu complemento (se houver)" />
                 </Form.Group>
 
-                <Button variant='success' type='submit' className='mt-2'>Enviar</Button>
+                <Button type='submit' variant='success' className='mt-2'>Enviar</Button>
             </Form>
         </>
 
