@@ -6,12 +6,12 @@ const Pagina = (props) => {
         <div>
             <Navbar bg="dark" data-bs-theme="dark" className="mb-2">
                 <Container>
-                    <Navbar.Brand href="/">Front-End</Navbar.Brand>
+                    <Navbar.Brand href="/">ReactJS - Pratice</Navbar.Brand>
                     <Nav className="me-auto">
-                        <Nav.Link href="/">Pagina Inicial</Nav.Link>
-                        <Nav.Link href="/alertas">Alerta</Nav.Link>
-                        <Nav.Link href="/botoes">Botões</Nav.Link>
-                        <Nav.Link href="/endereco">Formulário de Contato</Nav.Link>
+                        <Nav.Link href="/">Posts Model</Nav.Link>
+                        <Nav.Link href="/alertas">Alert Model</Nav.Link>
+                        <Nav.Link href="/botoes">Button Model</Nav.Link>
+                        <Nav.Link href="/endereco">Form Model</Nav.Link>
                     </Nav>
                 </Container>
             </Navbar>
