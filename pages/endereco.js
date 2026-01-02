@@ -76,7 +76,7 @@ const Endereco = () => {
                 <Field label="Número: " name="numero" type="number" register={register} placeholder="Digite o número do imóvel" required />
                 <Field label="Complemento: " name="complemento" register={register} placeholder="Digite seu complemento (se houver)" />
 
-                <Button type='submit' variant='success' className='mt-2'>Enviar</Button>
+                <Button type='submit' variant='success' className='mt-2 w-100'>Enviar</Button>
             </Form>
 
             <ToastContainer position="bottom-center" className="p-3">
