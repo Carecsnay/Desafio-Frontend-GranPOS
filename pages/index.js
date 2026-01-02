@@ -1,19 +1,18 @@
 import Box from "@/components/Box";
+import Pagina from "@/components/Pagina";
 
 export default function Home() {
   return (
-    <>
-      <div className="container">
-        <Box title='nome'>
-          <p>teste3</p>
-          <p>teste2212</p>
-        </Box>
+    <div className="container">
+      <Box title='nome'>
+        <p>teste3</p>
+        <p>teste2212</p>
+      </Box>
 
-        <Box title='teste'>
-          <p>teste1</p>
-          <p>teste22</p>
-        </Box>
-      </div>
-    </>
+      <Box title='teste'>
+        <p>teste1</p>
+        <p>teste22</p>
+      </Box>
+    </div>
   );
 }
