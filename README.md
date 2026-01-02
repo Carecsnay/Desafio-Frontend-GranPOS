@@ -1,40 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Desafio Frontend Cloud
 
-## Getting Started
+Este projeto é uma aplicação web desenvolvida com **Next.js** e **React Bootstrap**, focada na criação de formulários inteligentes com consumo de API externa e feedback visual para o usuário.
 
-First, run the development server:
+## 🚀 Funcionalidades Implementadas
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+-   **Integração com ViaCEP:** Busca automática de endereço ao digitar os 8 dígitos do CEP.
+-   **Feedback Visual (Toasts):**
+    -   🟡 **Aguarde:** Notificação amarela com texto escuro enquanto busca os dados.
+    -   🟢 **Sucesso:** Notificação verde ao encontrar o endereço ou enviar o formulário.
+    -   🔴 **Erro:** Notificação vermelha caso o CEP não seja encontrado ou ocorra falha na rede.
+-   **UX / UI (Experiência do Usuário):**
+    -   **Delay Simulado:** Atraso intencional de 2 segundos para melhor visualização do feedback de carregamento.
+    -   **Validação:** Campos obrigatórios gerenciados via `react-hook-form`.
+-   **Componentização:** Uso de componentes reutilizáveis que aceitam propriedades dinâmicas como `loading`, `required`.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🧠 Fundamentos de React Aplicados
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Além das bibliotecas, este projeto serviu para praticar conceitos essenciais do React:
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+-   **useState:** Hook fundamental utilizado para gerenciar o estado local da aplicação. Foi usado para controlar a visibilidade dos Toasts, armazenar as mensagens de feedback e alternar o estado de carregamento (`isLoading`) durante a requisição à API.
+-   **Props (Propriedades):** Mecanismo utilizado para passar dados e configurações do componente pai (`Endereco`) para o componente filho (`Field`). Isso permitiu tornar o input genérico e reutilizável, recebendo dinamicamente atributos como `label`, `placeholder` e `loading`.
+-   **Eventos:** Manipulação direta de eventos do DOM/React, como `onChange` (para capturar e formatar o CEP em tempo real) e `onSubmit` (para interceptar o envio do formulário).
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+## ⚒️ Tecnologias Utilizadas
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+As principais dependências do projeto, conforme o `package.json`:
 
-## Learn More
+-   **Next.js** (v15.1.7) - Framework React.
+-   **React** (v19.0.0) - Biblioteca para interfaces.
+-   **React Bootstrap** - Componentes Bootstrap para React.
+-   **Axios** - Cliente HTTP para consumo da API ViaCEP.
+-   **React Hook Form** - Gerenciamento performático de formulários.
 
-To learn more about Next.js, take a look at the following resources:
+## 📦 Como rodar o projeto
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+Certifique-se de ter o **Node.js** instalado em sua máquina.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **Instale as dependências:**
 
-## Deploy on Vercel
+    ```bash
+    npm install
+    # ou
+    yarn install
+    ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. **Execute o servidor de desenvolvimento:**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+    ```bash
+    npm run dev
+    ```
+
+3. **Acesse a aplicação:**
+   Abra o navegador em http://localhost:3000/.
+
+## 📂 Estrutura de Arquivos Relevantes
+
+-   `pages/endereco.js`: Lógica principal do formulário, estados de loading e toasts.
+
+-   `components/Alert.js`: Demonstração de variantes de alertas do Bootstrap.
+-   `components/Botoes.js`: Demonstração de variantes de botões do Bootstrap.
+-   `components/Box.js`: Exemplo de componente de post com titulo e paragrafo.
+-   `components/Form.js`: Componente de Input genérico (`Field`).
+-   `components/Pagina.js`: Navbar do projeto.
