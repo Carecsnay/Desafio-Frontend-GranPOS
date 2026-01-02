@@ -1,11 +1,15 @@
 import axios from 'axios'
-import { Button, Form } from 'react-bootstrap'
+import { useState } from 'react'
+import { Button, Form, Toast, ToastContainer } from 'react-bootstrap'
 import { useForm } from 'react-hook-form'
 import Field from '../components/Form'
 
 const Endereco = () => {
 
     const { register, handleSubmit, setValue } = useForm()
+    const [showToast, setShowToast] = useState(false)
+    const [toastMessage, setToastMessage] = useState('')
+    const [toastVariant, setToastVariant] = useState('success')
 
     const buscarCEP = (event) => {
         let cep = event.target.value.replace(/\D/g, '')
@@ -17,22 +21,43 @@ const Endereco = () => {
         setValue('cep', cep)
 
         if (cep.replace('-', '').length == 8) {
-            axios.get(`https://viacep.com.br/ws/${cep.replace('-', '')}/json/`).then(resultado => {
+            setToastMessage('Buscando dados do CEP...')
+            setToastVariant('warning')
+            setShowToast(true)
 
-                setValue('UF', resultado.data.uf)
-                setValue('cidade', resultado.data.localidade)
-                setValue('endereco', resultado.data.logradouro)
-                setValue('bairro', resultado.data.bairro)
-                setValue('complemento', resultado.data.complemento)
+            setTimeout(() => {
+                axios.get(`https://viacep.com.br/ws/${cep.replace('-', '')}/json/`)
+                    .then(resultado => {
+                        if (resultado.status === 200 && !resultado.data.erro) {
+                            setValue('UF', resultado.data.uf)
+                            setValue('cidade', resultado.data.localidade)
+                            setValue('endereco', resultado.data.logradouro)
+                            setValue('bairro', resultado.data.bairro)
+                            setValue('complemento', resultado.data.complemento)
 
-                console.log(resultado.status, resultado.statusText)
-            })
+                            setToastMessage('Endereço encontrado!')
+                            setToastVariant('success')
+                            setShowToast(true)
+                        } else {
+                            setToastMessage('Por favor verifique o CEP informado e tente novamente')
+                            setToastVariant('danger')
+                            setShowToast(true)
+                        }
+                    }).catch(() => {
+                        setToastMessage('Por favor verifique o CEP informado e tente novamente')
+                        setToastVariant('danger')
+                        setShowToast(true)
+                    })
+            }, 2000)
         }
 
     }
 
     const submit = (dados) => {
         console.log(dados)
+        setToastMessage('Formulário enviado com sucesso!')
+        setToastVariant('success')
+        setShowToast(true)
     }
 
 
@@ -50,6 +75,12 @@ const Endereco = () => {
 
                 <Button type='submit' variant='success' className='mt-2'>Enviar</Button>
             </Form>
+
+            <ToastContainer position="bottom-center" className="p-3">
+                <Toast onClose={() => setShowToast(false)} show={showToast} delay={3000} autohide bg={toastVariant}>
+                    <Toast.Body className={toastVariant === 'warning' ? 'text-dark' : 'text-white'}>{toastMessage}</Toast.Body>
+                </Toast>
+            </ToastContainer>
         </>
 
     )
