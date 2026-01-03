@@ -1,16 +1,26 @@
-import Posts from "@/components/Posts";
-
+import { useState, useEffect } from 'react';
 export default function Home() {
-  return (
-    <div className="container">
-      <Posts title='Titulo legal 1'>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati laudantium eius, autem qui placeat sunt rerum iste repellendus asperiores! Nesciunt accusamus at necessitatibus! Tenetur, accusamus corrupti! Dignissimos nihil neque deleniti!
-          Quos voluptatibus dolorum amet id quibusdam rem illum ut nobis, a incidunt. Sit alias necessitatibus quis. Sapiente magni facere sunt voluptatem, quia, odio nesciunt placeat, eaque recusandae quae vel reiciendis!</p>
-      </Posts>
+  const [greeting, setGreeting] = useState('');
 
-      <Posts title='Titulo legal 2'>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum aperiam vitae doloribus placeat quaerat eum, at quisquam aspernatur nulla aliquid officia delectus deleniti quo, ratione porro optio in ea! Velit.</p>
-      </Posts>
+  useEffect(() => {
+    const getGreeting = () => {
+      const hour = new Date().getHours();
+      if (hour >= 5 && hour < 12) {
+        return 'Bom dia!';
+      } else if (hour >= 12 && hour < 18) {
+        return 'Boa tarde!';
+      } else {
+        return 'Boa noite!';
+      }
+    };
+    setGreeting(getGreeting());
+  }, []);
+
+  return (
+    <div style={{ textAlign: 'center', marginTop: '50px', fontFamily: 'Arial, sans-serif' }}>
+      <h1>{greeting}</h1>
+      <h2>Seja bem-vindo(a)</h2>
+      <p>Fico feliz de ter você por aqui.</p>
     </div>
   );
 }

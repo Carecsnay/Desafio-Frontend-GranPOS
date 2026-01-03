@@ -6,12 +6,12 @@ const Navigation = (props) => {
         <div>
             <Navbar bg="dark" data-bs-theme="dark" className="mb-2">
                 <Container>
-                    <Navbar.Brand href="/">ReactJS - Pratice</Navbar.Brand>
+                    <Navbar.Brand href="/">ReactJS - Practice</Navbar.Brand>
                     <Nav className="me-auto">
-                        <Nav.Link href="/">Posts Model</Nav.Link>
                         <Nav.Link href="/alertas">Alert Model</Nav.Link>
                         <Nav.Link href="/botoes">Button Model</Nav.Link>
                         <Nav.Link href="/endereco">Form Model</Nav.Link>
+                        <Nav.Link href="/posts">Posts Model</Nav.Link>
                     </Nav>
                 </Container>
             </Navbar>
