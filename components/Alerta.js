@@ -3,7 +3,7 @@ import { Alert } from 'react-bootstrap'
 
 const Alerta = () => {
     return (
-        <div className='mt-4'>
+        <div className='my-5'>
             {
                 [
                     'primary',

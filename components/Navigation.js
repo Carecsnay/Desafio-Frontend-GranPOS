@@ -4,7 +4,7 @@ import { Container, Nav, Navbar } from "react-bootstrap";
 const Navigation = (props) => {
     return (
         <div>
-            <Navbar bg="dark" data-bs-theme="dark" className="mb-2">
+            <Navbar bg="dark" data-bs-theme="dark">
                 <Container>
                     <Navbar.Brand href="/">ReactJS - Practice</Navbar.Brand>
                     <Nav className="me-auto">
@@ -16,7 +16,7 @@ const Navigation = (props) => {
                 </Container>
             </Navbar>
 
-            <Container className='mb-3'>
+            <Container>
                 {props.children}
             </Container>
         </div>

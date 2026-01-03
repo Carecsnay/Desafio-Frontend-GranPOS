@@ -73,7 +73,7 @@ const Endereco = () => {
 
             <div className='d-flex flex-column justify-content-center gap-3 mt-4'>
                 <h4 className='p-3 border text-center rounded bg-secondary bg-opacity-75 text-white'>Endereço de Entrega usando API (viacep)</h4>
-                <Form onSubmit={handleSubmit(submit)} className='text-white bg-secondary bg-opacity-75 p-3 border rounded'>
+                <Form onSubmit={handleSubmit(submit)} className='text-white bg-secondary bg-opacity-75 p-5 border rounded'>
                     <Field label="CEP: " name="CEP" register={register} maxLength={9} placeholder="Digite seu CEP" onChange={buscarCEP} disabled={isLoading} loading={isLoading} required />
                     <Field label="Cidade: " name="cidade" register={register} placeholder="Digite sua Cidade" required />
                     <Field label="Estado (UF): " name="UF" register={register} placeholder="Digite sua UF" required />

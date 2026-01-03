@@ -11,7 +11,7 @@ const Posts = (props) => {
                 <title>Post Model</title>
             </Head>
 
-            <div className="border border-danger mb-3 p-3">
+            <div className="border border-danger m-4 p-4">
                 <h1 className="p-2 bg-danger text-white text-center text-capitalize">{title}</h1>
                 {/* herda todos os parágrafos */}
                 {props.children}
