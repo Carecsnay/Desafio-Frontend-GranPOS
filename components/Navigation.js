@@ -10,6 +10,7 @@ const Navigation = (props) => {
                     <Nav className="me-auto">
                         <Nav.Link href="/alertas">Alert Model</Nav.Link>
                         <Nav.Link href="/botoes">Button Model</Nav.Link>
+                        <Nav.Link href="/contador">Counter</Nav.Link>
                         <Nav.Link href="/endereco">Form Model</Nav.Link>
                         <Nav.Link href="/posts">Posts Model</Nav.Link>
                     </Nav>
