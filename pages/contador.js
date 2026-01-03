@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import React, { useState } from 'react'
 import { Button } from 'react-bootstrap';
 
@@ -15,14 +16,20 @@ const contador = () => {
     }
 
     return (
-        <div className='d-flex justify-content-center align-items-center flex-column my-5'>
-            <h1 className='mb-5'>Contador (Conceito de useState)</h1>
-            <div>
-                <Button variant='danger' onClick={handleDecrease} style={{ width: '40px' }}>-</Button>
-                <span className='mx-4'>{iterator}</span>
-                <Button variant='success' onClick={handleIncrease} style={{ width: '40px' }}>+</Button>
+        <>
+            <Head>
+                <title>Contador</title>
+            </Head>
+
+            <div className='d-flex justify-content-center align-items-center flex-column my-5'>
+                <h1 className='mb-5'>Contador (Conceito de useState)</h1>
+                <div>
+                    <Button variant='danger' onClick={handleDecrease} style={{ width: '40px' }}>-</Button>
+                    <span className='mx-4'>{iterator}</span>
+                    <Button variant='success' onClick={handleIncrease} style={{ width: '40px' }}>+</Button>
+                </div>
             </div>
-        </div>
+        </>
     )
 }
 

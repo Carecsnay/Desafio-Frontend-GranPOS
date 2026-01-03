@@ -12,6 +12,8 @@ Este projeto é uma aplicação web desenvolvida com **React.js (NextJS)** e **R
     -   🟡 **Aguarde:** Notificação amarela com texto escuro enquanto busca os dados.
     -   🟢 **Sucesso:** Notificação verde ao encontrar o endereço ou enviar o formulário.
     -   🔴 **Erro:** Notificação vermelha caso o CEP não seja encontrado ou ocorra falha na rede.
+ -   **Contador:** Exemplo prático de manipulação de estado (`useState`) com incremento e decremento.
+ -   **Disney API:** Consumo de dados de API externa para listagem de personagens.
 -   **(PLUS) UX / UI (Experiência do Usuário):**
     -   **Delay Simulado:** Atraso intencional de 2 segundos para melhor visualização do feedback de carregamento.
     -   **Validação:** Campos obrigatórios gerenciados via `react-hook-form`.
@@ -60,6 +62,9 @@ Certifique-se de ter o **Node.js** instalado em sua máquina.
 
 -   `pages/index.js`: Página inicial com saudação dinâmica e exibição de frases.
 -   `pages/endereco.js`: Lógica principal do formulário, estados de loading e toasts.
+-   `pages/contador.js`: Página do contador demonstrando o conceito de `useState`.
+-   `pages/disney.js`: Página de integração com a API da Disney.
+-   `pages/alertas.js`, `pages/botoes.js`, `pages/posts.js`: Páginas de demonstração dos modelos de componentes.
 -   `src/data/phrases.json`: Banco de dados local contendo as frases e autores.
 
 -   `components/Alerta.js`: Demonstração de variantes de alertas do Bootstrap.
