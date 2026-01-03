@@ -4,6 +4,9 @@ Este projeto é uma aplicação web desenvolvida com **React.js (NextJS)** e **R
 
 ## 🚀 Funcionalidades Implementadas
 
+-   **Página Inicial (Home):**
+    -   **Saudação Dinâmica:** Exibe "Bom dia", "Boa tarde" ou "Boa noite" com base no horário do sistema.
+    -   **Frases Motivacionais:** Carrega e exibe aleatoriamente uma frase motivacional a cada visita.
 -   **Integração com ViaCEP:** Busca automática de endereço ao digitar os 8 dígitos do CEP.
 -   **(PLUS) Feedback Visual (Toasts):**
     -   🟡 **Aguarde:** Notificação amarela com texto escuro enquanto busca os dados.
@@ -19,6 +22,7 @@ Este projeto é uma aplicação web desenvolvida com **React.js (NextJS)** e **R
 Além das bibliotecas, este projeto serviu para praticar conceitos essenciais do React:
 
 -   **(PLUS) useState:** Hook fundamental utilizado para gerenciar o estado local da aplicação. Foi usado para controlar a visibilidade dos Toasts, armazenar as mensagens de feedback e alternar o estado de carregamento (`isLoading`) durante a requisição à API.
+-   **(PLUS) useEffect:** Utilizado na página inicial (`index.js`) para executar a lógica de saudação e seleção da frase aleatória assim que o componente é montado.
 -   **Props (Propriedades):** Mecanismo utilizado para passar dados e configurações do componente pai (`Endereco`) para o componente filho (`Field`). Isso permitiu tornar o input genérico e reutilizável, recebendo dinamicamente atributos como `label`, `placeholder` e `loading`.
 -   **Eventos:** Manipulação direta de eventos do DOM/React, como `onChange` (para capturar e formatar o CEP em tempo real) e `onSubmit` (para interceptar o envio do formulário).
 
@@ -54,9 +58,11 @@ Certifique-se de ter o **Node.js** instalado em sua máquina.
 
 ## 📂 Estrutura de Arquivos Relevantes
 
+-   `pages/index.js`: Página inicial com saudação dinâmica e exibição de frases.
 -   `pages/endereco.js`: Lógica principal do formulário, estados de loading e toasts.
+-   `src/data/phrases.json`: Banco de dados local contendo as frases e autores.
 
--   `components/Alert.js`: Demonstração de variantes de alertas do Bootstrap.
+-   `components/Alerta.js`: Demonstração de variantes de alertas do Bootstrap.
 -   `components/Botoes.js`: Demonstração de variantes de botões do Bootstrap.
 -   `components/Posts.js`: Exemplo de componente de post com titulo e paragrafo.
 -   (PLUS) `components/Form.js`: Componente de Input genérico (`Field`).
