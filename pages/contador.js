@@ -18,9 +18,9 @@ const contador = () => {
         <div className='d-flex justify-content-center align-items-center flex-column my-5'>
             <h1 className='mb-5'>Contador (Conceito de useState)</h1>
             <div>
-                <Button onClick={handleDecrease} style={{ width: '40px' }}>-</Button>
+                <Button variant='danger' onClick={handleDecrease} style={{ width: '40px' }}>-</Button>
                 <span className='mx-4'>{iterator}</span>
-                <Button onClick={handleIncrease} style={{ width: '40px' }}>+</Button>
+                <Button variant='success' onClick={handleIncrease} style={{ width: '40px' }}>+</Button>
             </div>
         </div>
     )
