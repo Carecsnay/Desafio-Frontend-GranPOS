@@ -58,6 +58,6 @@ Certifique-se de ter o **Node.js** instalado em sua máquina.
 
 -   `components/Alert.js`: Demonstração de variantes de alertas do Bootstrap.
 -   `components/Botoes.js`: Demonstração de variantes de botões do Bootstrap.
--   `components/Box.js`: Exemplo de componente de post com titulo e paragrafo.
--   (PLUS) `components/Form.js`: Componente de Input genérico (`Field`). 
--   `components/Pagina.js`: Navbar do projeto.
+-   `components/Posts.js`: Exemplo de componente de post com titulo e paragrafo.
+-   (PLUS) `components/Form.js`: Componente de Input genérico (`Field`).
+-   `components/Navigation.js`: Navbar do projeto.

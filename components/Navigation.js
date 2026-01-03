@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container, Nav, Navbar } from "react-bootstrap";
 
-const Pagina = (props) => {
+const Navigation = (props) => {
     return (
         <div>
             <Navbar bg="dark" data-bs-theme="dark" className="mb-2">
@@ -23,4 +23,4 @@ const Pagina = (props) => {
     )
 }
 
-export default Pagina
+export default Navigation

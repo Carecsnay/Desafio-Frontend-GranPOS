@@ -1,10 +1,14 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Pagina from '@/components/Pagina';
+import Navigation from '@/components/Navigation';
+import Head from 'next/head';
 
 export default function App({ Component, pageProps }) {
   return (
-    <Pagina>
+    <Navigation>
+      <Head>
+        <title>Desafio Front-End</title>
+      </Head>
       <Component {...pageProps} />
-    </Pagina>
+    </Navigation>
   );
 }
