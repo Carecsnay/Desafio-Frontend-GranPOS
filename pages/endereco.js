@@ -59,9 +59,24 @@ const Endereco = () => {
     }
 
     const submit = () => {
-        setToastMessage('Formulário enviado com sucesso!')
-        setToastVariant('success')
+        setToastMessage('Enviando formulário...')
+        setToastVariant('warning')
         setShowToast(true)
+
+
+        setTimeout(() => {
+            setToastMessage('Formulário enviado com sucesso!')
+            setToastVariant('success')
+            setShowToast(true)
+
+            setValue('CEP', '')
+            setValue('UF', '')
+            setValue('cidade', '')
+            setValue('endereco', '')
+            setValue('bairro', '')
+            setValue('numero', '')
+            setValue('complemento', '')
+        }, 2500)
     }
 
 
